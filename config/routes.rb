@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create]
   resources :users, only: [:index]
 
-root 'users#index'
+root 'pages#index'
 
 end
