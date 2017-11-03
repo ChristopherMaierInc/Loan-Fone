@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/new_fone', to: 'pages#new_fone'
 
   devise_for :users, controllers: { sessions: 'users/sessions' }
+
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply, :restore, :mark_as_read
