@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-root 'pages#index'
+  root 'pages#index'
 
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
+  get '/new_fone', to: 'pages#new_fone'
+
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply, :restore, :mark_as_read
@@ -16,7 +17,5 @@ root 'pages#index'
 
   resources :messages, only: [:new, :create]
   resources :users, only: [:index]
-
-
 
 end

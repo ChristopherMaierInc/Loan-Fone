@@ -37,6 +37,7 @@ gem "mailboxer"
 gem 'gravatar_image_tag'
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
+gem 'devise-bootstrap-views'
 
 group :production do
   gem 'pg'
