@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class="container">
+
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>">
           <%= value %>
@@ -17,7 +17,7 @@
        <nav class="navbar navbar-inverse">
         <div class="container">
           <div class="navbar-header">
-            <%= link_to 'Loan\Fone', root_path, class: 'navbar-brand' %>
+            <%= link_to 'Loan\Fone', '#', class: 'navbar-brand' %>
           </div>
           <ul class="nav navbar-nav">
             <% if user_signed_in? %>
@@ -31,11 +31,12 @@
         </div>
       </nav>
 
-      <div class="page-header">
-        <h1><%= yield :page_header %></h1>
-      </div>
 
-      <%= yield %>
-    </div>
+      <div class="container">
+        <div class="page-header">
+          <h1><%= yield :page_header %></h1>
+        </div>
+        <%= yield %>
+      </div>
   </body>
 </html>
